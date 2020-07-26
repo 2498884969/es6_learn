@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch9_Symbol使用</title>
+</head>
+<body>
+    <script>
+        let s2 = Symbol('强旭辉');
+        let s3 = Symbol('强旭辉');
+        console.log(s2 === s3);
+
+        let s4 = Symbol.for('强旭辉');
+        let s5 = Symbol.for('强旭辉');
+        console.log(s4 === s5);
+
+        let res = s4 + 100;
+    </script>
+</body>
+</html>

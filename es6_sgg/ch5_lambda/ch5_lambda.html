@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch5_lambda</title>
+</head>
+<style>
+    #root {
+        background-color: #558800;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<body>
+    <h1>哈哈</h1>
+    <div id="root"></div>
+    <script>
+        let root = document.getElementById('root');
+        root.addEventListener('click', function() {
+            setTimeout(() => this.style.backgroundColor = 'red', 2000);
+        })
+        const arr = [1,2,3,4,5];
+        console.log(arr.filter((v)=> v%2 === 0)); 
+    </script>
+</body>
+</html>
