@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax请求封装</title>
+</head>
+<body>
+    <script>
+
+        const p = new Promise((resolve, reject)=> {
+            // 1. 创建对象
+            let xhr = new XMLHttpRequest()
+            // 2. 初始化 https://api.apiopen.top/test
+            xhr.open('GET', "https://api.apiopen.top/test")
+            // 3. 发送
+            xhr.send()
+            // 4. 绑定事件
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4) {
+                    if (xhr.status >= 200 && xhr.status < 300){
+                        resolve(xhr.response);
+                    } else {
+                        reject(xhr.status);
+                    }
+                }
+            }
+        });
+
+        p.then((value) => {
+            console.log(value);
+        }, (reason) => {
+            console.error(reason);
+        });
+
+        
+    </script>
+</body>
+</html>

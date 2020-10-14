@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xhr</title>
+</head>
+<body>
+    <script>
+        let xhr = new XMLHttpRequest();
+        // https://api.apiopen.top/test
+        
+        // 1. 请求成功回调
+        xhr.onload = e => {
+            console.log('request success')
+        };
+
+        // 2. 请求结束回调
+        xhr.onloadend = e => {
+            console.log("request onloadend")
+        }
+
+        // 3. 请求出错
+        xhr.onerror = e => {
+            console.log("request error")
+        }
+
+        // 4. 请求超时
+
+        xhr.timeout = e => {
+            console.log("request error")
+        }
+
+        // 5. 请求回调函数
+
+        xhr.onreadystatechange = () => {
+            console.log(`readyState: ${xhr.readyState}`)
+        }
+        console.log("xhr_open")
+        xhr.open('GET', 'https://api.apiopen.top/test')
+        console.log("xhr_send")
+        xhr.send()
+
+
+    </script>
+</body>
+</html>

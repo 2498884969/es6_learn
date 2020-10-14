@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iterator_2</title>
+</head>
+<body>
+    <script>
+        let can_iter_ob = {
+            name: "终极一班",
+            mems: [
+                "xiao_ming",
+                "xiao_hong",
+                "xiao_liang",
+                "xiao_bing"
+            ],
+            [Symbol.iterator]() {
+                let this_ = this;
+                index = 0;
+                return {
+                    next: function () {
+                        if (index<4){
+                            res = this_.mems[index];
+                            index ++;
+                            return {done:false, value: res};
+                        }else{
+                            return {done:true, value: undefined};
+                        }
+                    }
+                }
+            }
+        }
+        
+        for(let a of can_iter_ob){
+            console.log(a);
+        }
+
+    </script>
+</body>
+</html>

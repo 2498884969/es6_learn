@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol2_迭代器</title>
+</head>
+<body>
+    <script>
+        // let fibonacci = {
+        //     [Symbol.iterator]() {
+        //         let pre = 0, cur = 1;
+        //         return {
+        //             next() {
+        //                 [pre, cur] = [cur, pre + cur];
+        //                 return { done: false, value: cur }
+        //             }
+        //         }
+        //     }
+        // }
+        
+        let fb = {
+            [Symbol.iterator]() {
+                let pre = 0, cur = 1;
+                return {
+                    next() {
+                        [pre, cur] = [cur, pre+cur];
+                        return {done:false, value:cur};
+                    }
+                } 
+            }
+        }
+        for(let i of fb){
+            if (i>100) {
+                break;
+            }
+            console.log(i);
+        }
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generator</title>
+</head>
+<body>
+    <script>
+        // 异步编程纯回调函数
+
+        function* gen() {
+            console.log("hello generator");
+            yield 123
+        }
+        let gen_obj = gen();
+        console.log(gen_obj);
+        console.log(gen_obj.next());
+
+    </script>
+</body>
+</html>

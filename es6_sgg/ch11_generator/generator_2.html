@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器的函数参数</title>
+</head>
+<body>
+    <script>
+        function* gen(arg){
+            console.log(arg);
+            let one = yield 111;
+            
+            console.log(one);
+            yield 222;
+        }
+        let gen_obj = gen('AAA');
+        console.log(gen_obj.next());
+        console.log(gen_obj.next("BBB"))
+
+    </script>
+</body>
+</html>

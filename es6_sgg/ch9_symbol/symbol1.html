@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol2</title>
+</head>
+<body>
+
+    <script>
+        // todo 类语法后期要多学习
+        class Person {
+            static [Symbol.hasInstance] (para) {
+                console.log('我被用来进行类型检测');
+                console.log(para);
+                return false;
+            }
+        }
+
+        let o = {};
+
+        console.log(o instanceof Person);
+    </script>
+    
+</body>
+</html>
